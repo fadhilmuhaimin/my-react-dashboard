@@ -1,5 +1,5 @@
-import apiClient from "./apiClient"
-import { handleApiError } from "./errorHandler";
+import apiClient from "../api/apiClient";
+import { handleApiError } from "../api/errorHandler";
 
 export const login = async (username,password) => {
     try{
