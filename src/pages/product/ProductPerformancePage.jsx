@@ -100,16 +100,11 @@ const ProductPerformancePage = () => {
                       style={{ margin: 0, flexShrink: 0 }}
                     />
                   }
-                  title={
-                    <h6
-                      style={{
-                        fontSize: '16px', // Atur ukuran font title
-                        lineHeight: '2',
-                      }}
-                    >
+                  title=
+                   
                       {product.title}
-                    </h6>
-                  }
+                
+                  
                 />
 
                 <div

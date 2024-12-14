@@ -1,8 +1,8 @@
 
 import { useLocation } from 'react-router-dom';
 import { Row, Col, Card, Typography } from 'antd';
-import ProductInformation from '../../assets/components/common/product/ProductInformation';
-import ProductRating from '../../assets/components/common/product/ProductRating';
+import ProductInformation from '../../components/common/product/ProductInformation';
+import ProductRating from '../../components/common/product/ProductRating';
 
 const { Title } = Typography;
 

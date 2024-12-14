@@ -1,19 +1,25 @@
 
-import { Layout, Menu, Image } from 'antd';
+import { Layout, Menu, Button } from 'antd';
 import { NavLink, useLocation } from 'react-router-dom';
-import { UserOutlined, ShopOutlined } from '@ant-design/icons';
-import { useUIStore } from '../../../store/uiStore';
+import { UserOutlined, ShopOutlined, DashboardOutlined } from '@ant-design/icons';
+import { useUIStore } from '../../store/uiStore';
 import { useEffect } from 'react';
+import { IconMenu3 } from '@tabler/icons-react';
 
 const { Sider } = Layout;
 
 const menuItems = [
   {
+    key: '/dashboard',
+    icon: <DashboardOutlined />,
+    label: <NavLink to="/">Dashboard</NavLink>
+  },
+  {
     key: '/product',
     icon: <ShopOutlined />,
     label: 'Product',
     children: [
-      { key: '/', label: <NavLink to="/">Product Overview</NavLink> },
+      { key: '/product-overview', label: <NavLink to="/product-overview">Product Overview</NavLink> },
       { key: '/product-management', label: <NavLink to="/product-management">Manage Product</NavLink> }
     ]
   },
@@ -25,11 +31,15 @@ const menuItems = [
 ];
 
 const Sidebar = () => {
-  const { sidebarCollapsed, setSidebarCollapsed } = useUIStore();
+  const { sidebarCollapsed, toggleSidebar, setSidebarCollapsed } = useUIStore();
+
   const location = useLocation();
 
   const getSelectedKeys = () => {
     switch (true) {
+      case location.pathname === '/': // Untuk DashboardPage
+        return ['/dashboard'];
+  
       case location.pathname.startsWith('/product-edit'):
         return ['/product-management']; // Sorot menu 'Product Management' untuk 'ProductEditPage'
   
@@ -37,12 +47,13 @@ const Sidebar = () => {
         return ['/product-management']; // Sorot menu 'Product Management' untuk 'AddNewProduct'
   
       case location.pathname.startsWith('/product-detail/'):
-        return ['/']; // Sorot menu 'Product Management' untuk 'AddNewProduct'
+        return ['/product-overview']; // Sorot menu 'Product Overview' untuk 'ProductDetail'
   
       default:
         return [location.pathname]; // Gunakan pathname langsung untuk URL lainnya
     }
   };
+  
   
 
     useEffect(() => {
@@ -70,17 +81,18 @@ const Sidebar = () => {
       trigger={null}
     >
       <div style={{ textAlign: 'center', margin: '10px 0' }}>
-        <Image
-          preview={false}
-          src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
-          style={{ width: 35, height: 35 }}
+        
+        <Button
+          onClick={toggleSidebar}
+          type={sidebarCollapsed ? 'primary' : undefined}
+          icon={<IconMenu3 size={18} />}
         />
       </div>
 
       <Menu
         mode="inline"
         selectedKeys={getSelectedKeys()}
-        defaultOpenKeys={['/product']}
+        defaultOpenKeys={['/dashboard']}
         style={{ height: '100%', borderRight: 0 }}
         items={menuItems}
       />
