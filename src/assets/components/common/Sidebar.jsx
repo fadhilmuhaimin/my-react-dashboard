@@ -13,7 +13,7 @@ const menuItems = [
     icon: <ShopOutlined />,
     label: 'Product',
     children: [
-      { key: '/', label: <NavLink to="/">Product Performance</NavLink> },
+      { key: '/', label: <NavLink to="/">Product Overview</NavLink> },
       { key: '/product-management', label: <NavLink to="/product-management">Manage Product</NavLink> }
     ]
   },
@@ -35,6 +35,9 @@ const Sidebar = () => {
   
       case location.pathname.startsWith('/add-new-product'):
         return ['/product-management']; // Sorot menu 'Product Management' untuk 'AddNewProduct'
+  
+      case location.pathname.startsWith('/product-detail/'):
+        return ['/']; // Sorot menu 'Product Management' untuk 'AddNewProduct'
   
       default:
         return [location.pathname]; // Gunakan pathname langsung untuk URL lainnya

@@ -23,8 +23,7 @@ const MainLayout = () => {
             overflow: 'auto',
             height: 'calc(100vh - 124px)',
             marginBottom:'20px',
-          }}
-        >
+          }}>
           <Outlet />
         </Layout.Content>
       </Layout>

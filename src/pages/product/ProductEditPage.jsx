@@ -2,7 +2,6 @@ import  { useState, useEffect } from 'react';
 import { Form, Input, InputNumber, Select, Button, message } from 'antd';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getProductById, updateProduct } from '../../services/productService';
-import Title from 'antd/es/skeleton/Title';
 
 const ProductEditPage = () => {
   const { id } = useParams();
@@ -45,7 +44,6 @@ const ProductEditPage = () => {
   };
 
   return (
-    <Title level={4}>Add New Product</Title>,
     <Form form={form} layout="vertical" onFinish={onFinish}>
       <Form.Item name="title" label="Title" rules={[{required:true}]}>
         <Input />

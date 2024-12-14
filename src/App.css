@@ -3,3 +3,26 @@
   margin: 0 ;
 }
 
+.ant-card-meta-avatar{
+  padding-inline-end:0px !important
+}
+
+.ant-card-meta-title{
+  color: rgba(0, 0, 0, 0.88);
+font-weight: 600;
+font-size: 16px;
+overflow: hidden;
+white-space: normal !important;
+text-overflow: ellipsis;
+-webkit-box-orient: vertical;
+overflow: hidden;
+margin-left: 8px;
+}
+
+
+.ant-card-actions > li {
+  display: flex;
+  justify-content: center; /* Rata tengah horizontal */
+  align-items: center; /* Rata tengah vertikal */
+  height: 50px; /* Pastikan ada tinggi eksplisit */
+}

@@ -8,6 +8,7 @@ import ProductEditPage from "../pages/product/ProductEditPage";
 import ProfilePage from "../pages/profile/ProfilePage";
 import PropTypes from "prop-types";
 import AddNewProduct from "../pages/product/AddNewProduct";
+import ProductDetail from "../pages/product/ProductDetail";
 
 const ProtectedRoute = ({ children }) => {
     const { accessToken } = useAuthStore();
@@ -41,6 +42,7 @@ const Router = () => {
                 { path: 'product-edit/:id', element: <ProductEditPage /> },
                 { path: 'add-new-product', element: <AddNewProduct /> },
                 { path: 'profile', element: <ProfilePage /> },
+                { path: 'product-detail', element: <ProductDetail /> },
             ]
         }
     ]);
