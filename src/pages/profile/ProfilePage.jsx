@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Descriptions, Avatar, Card } from 'antd';
 import { useAuthStore } from '../../store/authStore';
 
