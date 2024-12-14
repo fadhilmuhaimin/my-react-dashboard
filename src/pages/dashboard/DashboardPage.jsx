@@ -7,14 +7,12 @@ import { DashboardDeals } from '../../components/common/dashboard/DashboardDeals
 const DashboardPage = () => {
   return (
     <Row gutter={[32,32]} style={{
-        marginTop: "0px",
-      }}>
+          marginTop: "",
+        }}>
       <Col xs={24}
           sm={24}
           xl={8}
-          style={{
-            height: "300px",
-          }}>
+>
         <DashboardTopUsers />
       </Col>
       <Col xs={24}
