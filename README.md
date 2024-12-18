@@ -1,5 +1,12 @@
 # Basic React Dashboard Architecture
 
+Access Credentials
+To access the dashboard, use the following credentials:
+
+Username: emilys
+Password: emilyspass
+Ensure the credentials match your authentication setup if you modify the login system.
+
 This project is a basic React dashboard setup built with Vite, incorporating a clean architecture for handling state management, API calls, and UI components.
 
 ## Features
@@ -26,9 +33,20 @@ This project is a basic React dashboard setup built with Vite, incorporating a c
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/react-dashboard.git
-   cd react-dashboard
+# Clone the repository
+git clone https://github.com/your-repo/react-dashboard.git
+cd react-dashboard
+
+# Install dependencies using Bun
+bun install
+
+# Alternatively, install dependencies using npm
+npm install
+
+# Run the development server with Bun
+bun dev
+
+# Or run the development server with npm
+npm run dev
 
 
